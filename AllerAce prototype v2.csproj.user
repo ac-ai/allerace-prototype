@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>C:\Users\Alber\Downloads\transparent background.png</Source>
+    <SmallTileSource>C:\Users\Alber\Downloads\transparent background.png</SmallTileSource>
+    <MediumTileSource>C:\Users\Alber\Downloads\transparent background.png</MediumTileSource>
+    <WideTileSource>C:\Users\Alber\Downloads\transparent background.png</WideTileSource>
+    <LargeTileSource>C:\Users\Alber\Downloads\transparent background.png</LargeTileSource>
+    <AppIconSource>C:\Users\Alber\Downloads\transparent background.png</AppIconSource>
+    <SplashScreenSource>C:\Users\Alber\Downloads\transparent background.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\Alber\Downloads\transparent background.png</PackageLogoSource>
+    <AppxPackageIsForStore>False</AppxPackageIsForStore>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <UseEmulator>true</UseEmulator>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <UseEmulator>true</UseEmulator>
+  </PropertyGroup>
+</Project>

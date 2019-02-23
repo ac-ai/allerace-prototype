@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="AllerAce_prototype_v2.HistoryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AllerAce_prototype_v2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    xmlns:controls ="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="backButton" Grid.Row="0" Click="backToMainMenu_Click" Style="{StaticResource NavigationBackButtonNormalStyle}" />
+        
+            
+
+
+            <SplitView Grid.Row="2" x:Name="splitView" IsPaneOpen="False" DisplayMode="CompactOverlay" CompactPaneLength="56" OpenPaneLength="500" >
+            <SplitView.Pane>
+                <StackPanel>
+                    <Button x:Name="hamburgerButton" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="28" Click="hamburgerButton_Click" />
+                    <ListBox x:Name="hamburgerMenu" SelectionChanged="hamburgerMenu_SelectionChanged">
+                        <ListBoxItem x:Name="exportDataButton" >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="28" Text="&#xE896;" />
+                                <TextBlock Text="Export Data (not yet implemented)" FontSize="24" Margin="20,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem x:Name="deleteButton" >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="28" Text="&#xE74D;" />
+                                <TextBlock Text="Delete Entry" FontSize="24" Margin="20,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </StackPanel>
+            </SplitView.Pane>
+            
+            <SplitView.Content>
+                <controls:DataGrid x:Name="historyGrid" GridLinesVisibility="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" AutoGenerateColumns="False" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserSortColumns="True" ItemsSource="{x:Bind ViewModel.MeasurementEntries , Mode=OneWay}">
+                    <controls:DataGrid.Columns>
+                        <controls:DataGridTextColumn Header="Name" Binding="{Binding Name}" FontSize="32" />
+                        <controls:DataGridTextColumn Header="Allergen" Binding="{Binding Allergen}" FontSize="32" />
+                        <controls:DataGridTextColumn Header="Histamine Level (nM)" Binding="{Binding histamineLevel}" FontSize="32" />
+                        <controls:DataGridTextColumn Header="Date and Time" Binding="{Binding dateAndTime}" FontSize="32" />
+                        <controls:DataGridTextColumn Header="Tags" Binding="{Binding Tags}" FontSize="32" />
+                    </controls:DataGrid.Columns>
+                </controls:DataGrid>
+            </SplitView.Content>
+            
+
+        </SplitView>
+
+    </Grid>
+</Page>

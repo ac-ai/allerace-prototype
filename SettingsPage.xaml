@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="AllerAce_prototype_v2.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AllerAce_prototype_v2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button x:Name="backButton" Click="backButton_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource NavigationBackButtonNormalStyle}" />
+        <StackPanel Margin="48">
+            <ComboBox x:Name="histamineUnits" Header="Units for concentration" >
+                <ComboBoxItem Content="nM (nmol/L)" />
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Page>
